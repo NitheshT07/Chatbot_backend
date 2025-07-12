@@ -7,9 +7,11 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
-# Replace with your actual key securely in production
-RAPIDAPI_KEY = "7091642a6fmsh386fe0f50773707p18d80cjsn770fc45bef8b"
-RAPIDAPI_HOST = "translate-plus.p.rapidapi.com"
+
+
+RAPIDAPI_KEY = os.environ.get("RAPIDAPI_KEY")
+RAPIDAPI_HOST = os.environ.get("RAPIDAPI_HOST")
+
 
 MEMORY_FILE = "chat_memory.json"
 
